@@ -14,12 +14,9 @@ public class frameTelaInicial extends javax.swing.JFrame {
 
     public frameTelaInicial() {
         
-        initComponents();        
-        lblAcertou.setVisible(false);
-        lblErrou.setVisible(false);
-        lblNumeroSorteado.setVisible(false);  
-       
-        //lblNumeroSorteado.setText(Double.toString(Math.random() +1));
+        initComponents();
+        lblTextoBalao.setText("<html>Tente descobrir o número no qual estou pensando entre 1 e 6...</html>");
+        lblNumeroSorteado.setVisible(false);
         
     }
     
@@ -44,108 +41,66 @@ public class frameTelaInicial extends javax.swing.JFrame {
     private void initComponents() {
 
         spnPalpite = new javax.swing.JSpinner();
-        jLabel4 = new javax.swing.JLabel();
+        lblDigiteSeuPalpite = new javax.swing.JLabel();
         btnVerificaPalpite = new javax.swing.JButton();
-        lblErrou = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        lblAcertou = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
         lblNumeroSorteado = new javax.swing.JLabel();
+        lblTextoBalao = new javax.swing.JLabel();
+        lblGenio = new javax.swing.JLabel();
+        lblBalao = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setForeground(java.awt.Color.white);
+        setSize(new java.awt.Dimension(150, 150));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setText("Seu palpite:");
+        spnPalpite.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        spnPalpite.setModel(new javax.swing.SpinnerNumberModel(1, 1, 6, 1));
+        spnPalpite.setMaximumSize(new java.awt.Dimension(30, 30));
+        getContentPane().add(spnPalpite, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 160, 150, 40));
 
-        btnVerificaPalpite.setText("ACERTEI?!");
+        lblDigiteSeuPalpite.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
+        lblDigiteSeuPalpite.setText("Meu palpite:");
+        getContentPane().add(lblDigiteSeuPalpite, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 110, -1, -1));
+
+        btnVerificaPalpite.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
+        btnVerificaPalpite.setText("Verificar");
         btnVerificaPalpite.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVerificaPalpiteActionPerformed(evt);
             }
         });
+        getContentPane().add(btnVerificaPalpite, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 240, 170, 50));
 
-        lblErrou.setText("Errou! Eu estava pensando no:");
-
-        jLabel6.setText("Tente adivinhar qual número estou pensando entre 1 e 6...");
-
-        lblAcertou.setText("Acertou!");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
+        lblNumeroSorteado.setFont(new java.awt.Font("Consolas", 1, 36)); // NOI18N
+        lblNumeroSorteado.setForeground(new java.awt.Color(0, 51, 255));
         lblNumeroSorteado.setText("0");
+        getContentPane().add(lblNumeroSorteado, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 20, 40));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(51, 51, 51)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblErrou, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(39, 39, 39)
-                                .addComponent(lblNumeroSorteado, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(btnVerificaPalpite)
-                            .addComponent(spnPalpite, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(92, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblAcertou, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(74, 74, 74))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(86, 86, 86)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblErrou, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblNumeroSorteado))
-                .addGap(10, 10, 10)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(lblAcertou, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(32, 32, 32)
-                        .addComponent(jLabel4))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(spnPalpite, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnVerificaPalpite)
-                .addContainerGap(159, Short.MAX_VALUE))
-        );
+        lblTextoBalao.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        getContentPane().add(lblTextoBalao, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 200, 90));
+
+        lblGenio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/genio.png"))); // NOI18N
+        getContentPane().add(lblGenio, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 190, 270));
+
+        lblBalao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/balao.jpg"))); // NOI18N
+        getContentPane().add(lblBalao, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 350, 320));
+
+        jLabel1.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("Jogo de Adivinhação");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVerificaPalpiteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerificaPalpiteActionPerformed
-
-        // OCULTANDO CAMPOS
-        lblAcertou.setVisible(false);
-        lblErrou.setVisible(false);
-        lblNumeroSorteado.setVisible(false); 
+        
+        // GARANTINDO QUE O NÚMERO SORTEADO ANTES NÃO APAREÇA
+        lblNumeroSorteado.setVisible(false);
         
         // SORTEANDO NÚMERO ALEATÓRIO
         int numeroSorteado = sorteiaNumero();
-        lblNumeroSorteado.setText(Integer.toString(numeroSorteado));  
         
         // OBTENDO PALPITE
         int numeroPalpite = Integer.parseInt(spnPalpite.getValue().toString());
@@ -153,11 +108,11 @@ public class frameTelaInicial extends javax.swing.JFrame {
         // VALIDANDO PALPITE
         if (numeroPalpite == numeroSorteado) {
         
-            lblAcertou.setVisible(true);
-            lblNumeroSorteado.setVisible(true);
+           lblTextoBalao.setText("<html>Você acertou!!! Parabéns!!!</html>");
             
         } else {
-            lblErrou.setVisible(true);
+            lblTextoBalao.setText("<html>Você errou!!! Eu estava pensando no: </html>");
+            lblNumeroSorteado.setText(Integer.toString(numeroSorteado));
             lblNumeroSorteado.setVisible(true);
         }
         
@@ -200,12 +155,12 @@ public class frameTelaInicial extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnVerificaPalpite;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel lblAcertou;
-    private javax.swing.JLabel lblErrou;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lblBalao;
+    private javax.swing.JLabel lblDigiteSeuPalpite;
+    private javax.swing.JLabel lblGenio;
     private javax.swing.JLabel lblNumeroSorteado;
+    private javax.swing.JLabel lblTextoBalao;
     private javax.swing.JSpinner spnPalpite;
     // End of variables declaration//GEN-END:variables
 }
