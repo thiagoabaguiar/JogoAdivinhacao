@@ -96,9 +96,6 @@ public class frameTelaInicial extends javax.swing.JFrame {
 
     private void btnVerificaPalpiteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerificaPalpiteActionPerformed
         
-        // GARANTINDO QUE O NÚMERO SORTEADO ANTES NÃO APAREÇA
-        lblNumeroSorteado.setVisible(false);
-        
         // SORTEANDO NÚMERO ALEATÓRIO
         int numeroSorteado = sorteiaNumero();
         
@@ -111,9 +108,7 @@ public class frameTelaInicial extends javax.swing.JFrame {
            lblTextoBalao.setText("<html>Você acertou!!! Parabéns!!!</html>");
             
         } else {
-            lblTextoBalao.setText("<html>Você errou!!! Eu estava pensando no: </html>");
-            lblNumeroSorteado.setText(Integer.toString(numeroSorteado));
-            lblNumeroSorteado.setVisible(true);
+            lblTextoBalao.setText("<html>Você errou!!! Eu estava pensando no: " + numeroSorteado + "</html>");
         }
         
     }//GEN-LAST:event_btnVerificaPalpiteActionPerformed

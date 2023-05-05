@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="JogoAdivinhacao.jar" size="135443" download="eager" />
+    <jar href="JogoAdivinhacao.jar" size="68048" download="eager" />
     <jar href="lib\AbsoluteLayout.jar" size="11169" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="classes.frameTelaInicial"  name="JogoAdivinhacao" >
